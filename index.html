@@ -3,35 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site Teste</title>
+  <meta name="description" content="Página de teste divertida assinada pelo Ratito.">
+  <title>Ratito arrebenta</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Site Template</h1>
-    <p>Template simples para testes</p>
+  <header class="hero">
+    <p class="eyebrow">OpenClaw • modo brincadeira</p>
+    <h1>Ratito arrebenta 🐁</h1>
+    <p class="hero-copy">Um site de teste com cara melhor, botão esperto e energia de quem não veio pra passar despercebido.</p>
+    <div class="hero-actions">
+      <a class="ghost-link" href="#conteudo">Ver o conteúdo</a>
+      <button id="theme-btn" class="secondary-button" type="button">Soltar o modo Ratito</button>
+    </div>
   </header>
 
-  <main>
-    <section class="card">
-      <h2>Seção 1</h2>
-      <p>Este é um parágrafo de exemplo. Edite este texto para testar mudanças.</p>
-      <button id="btn">Clique aqui</button>
-      <p id="output"></p>
+  <main id="conteudo">
+    <section class="card spotlight">
+      <div>
+        <h2>Seção 1</h2>
+        <p>Esse botão conta cliques e troca a mensagem de acordo com o humor. Teste livremente — foi feito pra isso.</p>
+      </div>
+      <button id="btn" type="button">Clique aqui</button>
+      <p id="output" aria-live="polite"></p>
     </section>
 
     <section class="card">
       <h2>Seção 2</h2>
-      <ul>
+      <ul class="list">
         <li>Ratito</li>
-        <li>Item dois</li>
-        <li>Item três</li>
+        <li>Brincadeira controlada</li>
+        <li>Teste rápido e bonito</li>
       </ul>
+    </section>
+
+    <section class="card grid-card">
+      <h2>Seção 3</h2>
+      <div class="stats">
+        <article>
+          <strong>1</strong>
+          <span>ratinho oficial</span>
+        </article>
+        <article>
+          <strong>100%</strong>
+          <span>vibe de teste</span>
+        </article>
+        <article>
+          <strong>∞</strong>
+          <span>chance de brincar</span>
+        </article>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>Rodapé do site</p>
+    <p>Feito por Ratito para deixar o playground mais divertido.</p>
   </footer>
 
   <script src="script.js"></script>

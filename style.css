@@ -4,65 +4,215 @@
   padding: 0;
 }
 
-body {
-  font-family: system-ui, sans-serif;
-  background: #f5f5f5;
-  color: #222;
-  line-height: 1.5;
+:root {
+  --bg: #f4efe7;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: #fff;
+  --text: #231f20;
+  --muted: #6c625f;
+  --accent: #b45309;
+  --accent-strong: #7c2d12;
+  --shadow: 0 18px 50px rgba(35, 31, 32, 0.14);
 }
 
-header {
-  background: #2d2d2d;
-  color: #fff;
-  padding: 2rem 1rem;
+body {
+  font-family: system-ui, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(255, 202, 143, 0.5), transparent 35%),
+    linear-gradient(180deg, #fff8f0 0%, var(--bg) 100%);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+body.mode-ratito {
+  --bg: #1a1322;
+  --surface: rgba(33, 24, 42, 0.8);
+  --surface-strong: #241933;
+  --text: #f7eaff;
+  --muted: #c7b5da;
+  --accent: #f59e0b;
+  --accent-strong: #f97316;
+  --shadow: 0 20px 55px rgba(0, 0, 0, 0.3);
+  background:
+    radial-gradient(circle at top, rgba(244, 114, 182, 0.34), transparent 30%),
+    linear-gradient(180deg, #241933 0%, #120d18 100%);
+}
+
+body.mode-ratito .hero {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.hero {
+  max-width: 980px;
+  margin: 1.5rem auto 0;
+  padding: 3rem 1.5rem 1.75rem;
   text-align: center;
+  border: 1px solid rgba(124, 45, 18, 0.08);
+  border-radius: 28px;
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+  margin-bottom: 0.85rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.25rem, 5vw, 4.4rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.hero-copy {
+  max-width: 62ch;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.35rem;
+}
+
+.ghost-link,
+button {
+  border-radius: 999px;
+  font: inherit;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+
+.ghost-link {
+  border: 1px solid rgba(124, 45, 18, 0.18);
+  color: var(--text);
+  padding: 0.85rem 1.2rem;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.secondary-button,
+button {
+  border: none;
+  padding: 0.9rem 1.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.secondary-button,
+button {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #fff;
+  box-shadow: 0 12px 25px rgba(180, 83, 9, 0.2);
+}
+
+button:hover,
+.secondary-button:hover,
+.ghost-link:hover {
+  transform: translateY(-2px);
 }
 
 main {
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  max-width: 980px;
+  margin: 1.5rem auto 0;
+  padding: 0 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
 }
 
 .card {
-  background: #fff;
-  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid rgba(124, 45, 18, 0.08);
+  border-radius: 24px;
   padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
 }
 
 .card h2 {
   margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+}
+
+.card p,
+.card li,
+footer {
+  color: var(--muted);
 }
 
 .card ul {
   list-style-position: inside;
 }
 
-button {
-  background: #2d2d2d;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
+.spotlight {
+  grid-column: span 2;
+  display: grid;
+  gap: 1rem;
 }
 
-button:hover {
-  background: #444;
+.list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.grid-card {
+  grid-column: span 2;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.stats article {
+  background: rgba(255, 255, 255, 0.34);
+  border-radius: 18px;
+  padding: 1rem;
+  display: grid;
+  gap: 0.25rem;
+  text-align: center;
+}
+
+.stats strong {
+  font-size: 1.5rem;
+  color: var(--text);
 }
 
 #output {
-  margin-top: 0.75rem;
-  font-weight: 500;
+  min-height: 1.5rem;
+  font-weight: 600;
+  color: var(--accent-strong);
 }
 
 footer {
   text-align: center;
-  padding: 1.5rem;
-  color: #777;
+  padding: 0.75rem 1rem 2rem;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    margin-inline: 0.75rem;
+    padding: 2.25rem 1.1rem 1.5rem;
+  }
+
+  main {
+    padding-inline: 0.75rem;
+  }
+
+  .spotlight,
+  .grid-card {
+    grid-column: auto;
+  }
 }
